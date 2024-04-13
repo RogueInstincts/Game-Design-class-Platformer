@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://v50ml53ty1bd"]
+
+[ext_resource type="Script" path="res://spawner.gd" id="1_uyvkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kiq4"]
+size = Vector2(33, 50)
+
+[node name="spawner" type="Area2D"]
+position = Vector2(2128, 331)
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("1_uyvkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5kiq4")

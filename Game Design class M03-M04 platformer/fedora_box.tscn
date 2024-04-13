@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhglgmv4o8xjx"]
+
+[ext_resource type="PackedScene" uid="uid://dasrystad37yi" path="res://coin_box.tscn" id="1_jvi0l"]
+[ext_resource type="Script" path="res://fedora_box.gd" id="2_umtfj"]
+
+[node name="fedora_box" instance=ExtResource("1_jvi0l")]
+script = ExtResource("2_umtfj")

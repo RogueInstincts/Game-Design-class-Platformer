@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://x82nfh0cr7a7"]
+
+[ext_resource type="Texture2D" uid="uid://jluede5csyoe" path="res://heart.png" id="1_pbh84"]
+[ext_resource type="Script" path="res://coin.gd" id="2_ynbyi"]
+
+[node name="Heart" type="Sprite2D"]
+texture = ExtResource("1_pbh84")
+script = ExtResource("2_ynbyi")

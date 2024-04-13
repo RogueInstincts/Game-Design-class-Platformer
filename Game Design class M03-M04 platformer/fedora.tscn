@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://wxxkj44viq3c"]
+
+[ext_resource type="Script" path="res://fedora.gd" id="1_085g0"]
+[ext_resource type="Texture2D" uid="uid://c4hyndopaexwv" path="res://fedora.png" id="2_rnjds"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypv8l"]
+size = Vector2(28, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ndu7"]
+size = Vector2(32, 15)
+
+[node name="fedora" type="CharacterBody2D"]
+collision_layer = 128
+collision_mask = 9
+script = ExtResource("1_085g0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ypv8l")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_rnjds")
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_3ndu7")

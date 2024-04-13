@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://di25m5lvqqi06"]
+
+[ext_resource type="Script" path="res://hidden_shield.gd" id="1_v3cun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lih66"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3dd2"]
+size = Vector2(26, 28)
+
+[node name="hidden_shield" type="StaticBody2D"]
+position = Vector2(2800, 496)
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_v3cun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lih66")
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_p3dd2")

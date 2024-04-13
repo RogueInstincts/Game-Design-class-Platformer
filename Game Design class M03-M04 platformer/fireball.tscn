@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw7dxpa1rcwwg"]
+
+[ext_resource type="Script" path="res://fireball.gd" id="1_4cffq"]
+[ext_resource type="Texture2D" uid="uid://3nrefuds2kn" path="res://fireball_2.png" id="1_k77hg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j44tg"]
+size = Vector2(3, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj0f8"]
+size = Vector2(11, 8)
+
+[node name="fireball" type="CharacterBody2D"]
+collision_layer = 128
+collision_mask = 5
+script = ExtResource("1_4cffq")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_k77hg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j44tg")
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_yj0f8")

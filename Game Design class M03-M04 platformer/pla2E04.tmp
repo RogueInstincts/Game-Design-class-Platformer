@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1svnaw4xvmjg"]
+
+[ext_resource type="Texture2D" uid="uid://jo3qeo2ppymd" path="res://background.png" id="1_fnl6r"]
+[ext_resource type="Texture2D" uid="uid://c6hgbe5yh4vw8" path="res://background_cloudless.png" id="1_ltv7w"]
+[ext_resource type="Texture2D" uid="uid://73q1oy5cj31v" path="res://dirt.png" id="3_jsbu2"]
+[ext_resource type="Texture2D" uid="uid://dq8vguo1tilsp" path="res://grass.png" id="4_hr53i"]
+[ext_resource type="Texture2D" uid="uid://cwul1l8d16vc8" path="res://box.png" id="5_br88r"]
+[ext_resource type="PackedScene" uid="uid://0wo6d68fsx4e" path="res://player.tscn" id="6_pgo6l"]
+[ext_resource type="PackedScene" uid="uid://8rcetfxt4v4v" path="res://enemy.tscn" id="7_i3uyn"]
+[ext_resource type="PackedScene" uid="uid://dasrystad37yi" path="res://coin_box.tscn" id="8_y2hrf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvmm1"]
+texture = ExtResource("3_jsbu2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8f2bk"]
+texture = ExtResource("4_hr53i")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vud45"]
+texture = ExtResource("5_br88r")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_eoay8"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_mvmm1")
+sources/1 = SubResource("TileSetAtlasSource_8f2bk")
+sources/2 = SubResource("TileSetAtlasSource_vud45")
+
+[node name="platformer" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(1295.5, 344.5)
+scale = Vector2(5.0957, 1.35352)
+texture = ExtResource("1_ltv7w")
+
+[node name="clouds" type="Sprite2D" parent="background"]
+position = Vector2(-0.246704, -113.382)
+scale = Vector2(1, 0.573816)
+texture = ExtResource("1_fnl6r")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_eoay8")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(1310720, 0, 0, 1376255, 0, 0, 1310721, 0, 0, 1310722, 0, 0, 1310723, 0, 0, 1310724, 0, 0, 1310725, 0, 0, 1310726, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1310734, 0, 0, 1310735, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1310738, 0, 0, 1310739, 0, 0, 1310740, 0, 0, 1310741, 0, 0, 1310742, 0, 0, 1310743, 0, 0, 1310744, 0, 0, 1310745, 0, 0, 1310746, 0, 0, 1310747, 0, 0, 1310748, 0, 0, 1310749, 0, 0, 1310750, 0, 0, 1310751, 0, 0, 1310752, 0, 0, 1310753, 0, 0, 1310754, 0, 0, 1310755, 0, 0, 1310756, 0, 0, 1245220, 0, 0, 1179684, 0, 0, 1114148, 0, 0, 1048612, 0, 0, 983076, 0, 0, 917540, 0, 0, 852004, 0, 0, 1310719, 0, 0, 1245183, 0, 0, 1179647, 0, 0, 1114111, 0, 0, 1048575, 0, 0, 983039, 0, 0, 917503, 0, 0, 851967, 0, 0, 786431, 0, 0, 720895, 0, 0, 655359, 0, 0, 589823, 0, 0, 524287, 0, 0, 786468, 0, 0, 720932, 0, 0, 655396, 0, 0, 589860, 0, 0, 524324, 0, 0, 458788, 0, 0, 1245184, 1, 0, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 0, 0, 1245213, 0, 0, 1245214, 1, 0, 1245215, 1, 0, 1245216, 1, 0, 1245217, 1, 0, 1245218, 1, 0, 1245219, 1, 0, 983050, 0, 0, 983054, 0, 0, 983055, 0, 0, 983057, 0, 0, 983056, 0, 0, 983058, 0, 0, 720912, 0, 0, 1179670, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1179671, 0, 0, 1179676, 0, 0, 1114140, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1114141, 0, 0, 1179677, 0, 0, 1441791, 0, 0, 1376256, 0, 0, 1376257, 0, 0, 1376258, 0, 0, 1376259, 0, 0, 1376260, 0, 0, 1376261, 0, 0, 1376262, 0, 0, 1376263, 0, 0, 1376264, 0, 0, 1376265, 0, 0, 1376266, 0, 0, 1376267, 0, 0, 1376268, 0, 0, 1376269, 0, 0, 1376270, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1376274, 0, 0, 1376275, 0, 0, 1376276, 0, 0, 1376277, 0, 0, 1376278, 0, 0, 1376279, 0, 0, 1376280, 0, 0, 1376281, 0, 0, 1376282, 0, 0, 1376283, 0, 0, 1376284, 0, 0, 1376285, 0, 0, 1376286, 0, 0, 1376287, 0, 0, 1376288, 0, 0, 1376289, 0, 0, 1376290, 0, 0, 1376291, 0, 0, 1376292, 0, 0, 1507327, 0, 0, 1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441805, 0, 0, 1441806, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441810, 0, 0, 1441811, 0, 0, 1441812, 0, 0, 1441813, 0, 0, 1441814, 0, 0, 1441815, 0, 0, 1441816, 0, 0, 1441817, 0, 0, 1441818, 0, 0, 1441819, 0, 0, 1441820, 0, 0, 1441821, 0, 0, 1441822, 0, 0, 1441823, 0, 0, 1441824, 0, 0, 1441825, 0, 0, 1441826, 0, 0, 1441827, 0, 0, 1441828, 0, 0)
+
+[node name="player" parent="." instance=ExtResource("6_pgo6l")]
+
+[node name="enemy" parent="." instance=ExtResource("7_i3uyn")]
+
+[node name="points" type="Label" parent="."]
+offset_right = 202.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lives: 3
+Gold: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="coin_box" parent="." instance=ExtResource("8_y2hrf")]
+
+[node name="coin_box2" parent="." instance=ExtResource("8_y2hrf")]
+position = Vector2(528, 368)
+
+[node name="coin_box3" parent="." instance=ExtResource("8_y2hrf")]
+position = Vector2(560, 496)

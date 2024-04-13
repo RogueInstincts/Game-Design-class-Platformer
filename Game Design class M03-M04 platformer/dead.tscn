@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx6hsv0n6ftkx"]
+
+[ext_resource type="Texture2D" uid="uid://c6hgbe5yh4vw8" path="res://background_cloudless.png" id="1_fe34j"]
+[ext_resource type="Texture2D" uid="uid://jo3qeo2ppymd" path="res://background.png" id="2_stgqs"]
+
+[node name="dead" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(1296, 361)
+scale = Vector2(5.0957, 1.43352)
+texture = ExtResource("1_fe34j")
+
+[node name="clouds" type="Sprite2D" parent="background"]
+position = Vector2(-0.246704, -113.382)
+scale = Vector2(1, 0.573816)
+texture = ExtResource("2_stgqs")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
