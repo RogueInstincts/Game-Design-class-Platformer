@@ -8,7 +8,7 @@ var cooldown = 0
 
 func add_coin():
 	if can_add > 0 and cooldown == 0:
-		platformer.gold += 1
+		Global.gold += 1
 		var coin = load("res://coin.tscn")
 		coin = coin.instantiate()
 		coin.transform.origin = transform.origin + Vector2(0,-20)

@@ -11,7 +11,7 @@ var cooldown = 0
 
 func add_life():
 	if can_add > 0 and cooldown == 0:
-		platformer.lives += 1
+		Global.lives += 1
 		var heart = load("res://heart.tscn")
 		heart = heart.instantiate()
 		heart.transform.origin = transform.origin + Vector2(0,-20)

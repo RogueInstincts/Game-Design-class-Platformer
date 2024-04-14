@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3hgpaya6cj5x"]
+
+[ext_resource type="Script" path="res://roll_away.gd" id="1_121ea"]
+[ext_resource type="Texture2D" uid="uid://dfas5lbye2g6f" path="res://character.png" id="1_xg1vm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xnkf"]
+size = Vector2(14, 7)
+
+[node name="roll_away" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_121ea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 11.5)
+shape = SubResource("RectangleShape2D_2xnkf")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_xg1vm")

@@ -14,7 +14,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	player = platformer.player
-	if player.transform.origin.x > transform.origin.x and not area_2d.has_overlapping_bodies():
-		transform.origin.x = player.transform.origin.x
+	if player:
+		if player.transform.origin.x > transform.origin.x and not area_2d.has_overlapping_bodies():
+			transform.origin.x = player.transform.origin.x
 	
 	move_and_slide()

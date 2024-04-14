@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dui4t3kcfsqwa"]
+[gd_scene load_steps=6 format=3 uid="uid://dui4t3kcfsqwa"]
 
 [ext_resource type="Texture2D" uid="uid://c6hgbe5yh4vw8" path="res://background_cloudless.png" id="1_5vt17"]
+[ext_resource type="Script" path="res://end.gd" id="1_5xker"]
 [ext_resource type="Texture2D" uid="uid://jo3qeo2ppymd" path="res://background.png" id="2_q3ldu"]
+[ext_resource type="Texture2D" uid="uid://bcc2ms8udd3x4" path="res://coin.png" id="3_1ka10"]
+[ext_resource type="Texture2D" uid="uid://jluede5csyoe" path="res://heart.png" id="4_qol6e"]
 
 [node name="win" type="Node2D"]
+script = ExtResource("1_5xker")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(1296, 361)
@@ -18,3 +22,32 @@ texture = ExtResource("2_q3ldu")
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="Panel"]
+offset_left = 451.0
+offset_top = 150.0
+offset_right = 701.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 50
+text = "YOU WON!"
+horizontal_alignment = 1
+
+[node name="points" type="Label" parent="Panel"]
+offset_left = 577.0
+offset_top = 324.0
+offset_right = 604.0
+offset_bottom = 416.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = ": 3
+
+: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coin" type="Sprite2D" parent="Panel"]
+position = Vector2(566, 397)
+texture = ExtResource("3_1ka10")
+
+[node name="Heart" type="Sprite2D" parent="Panel"]
+position = Vector2(566, 345)
+texture = ExtResource("4_qol6e")

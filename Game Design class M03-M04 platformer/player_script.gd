@@ -45,18 +45,25 @@ func powerup_lose():
 	apply_scale(Vector2(1, 0.5))
 	sprite.texture = load("res://character.png")
 	sprite.apply_scale(Vector2(1, (1/0.56)))
+	var roll = load("res://roll_away.tscn")
+	roll = roll.instantiate()
+	roll.transform.origin = transform.origin
+	platformer.add_child(roll)
 	fedora = false
 	dragon = false
 
 func kill():
-	platformer.lives -= 1
+	Global.lives -= 1
 	queue_free()
-	if platformer.lives > 0:
+	
+	if Global.lives > 0:
 		player = load("res://player.tscn")
 		player = player.instantiate()
 		platformer.add_child(player)
 		platformer.player = player
 		view.reset()
+	else:
+		platformer.get_tree().change_scene_to_file("res://dead.tscn")
 
 func _physics_process(delta):
 	if shield_time > 0:
@@ -90,6 +97,7 @@ func _physics_process(delta):
 			var objects = hitbox.get_overlapping_bodies()
 			for i in objects:
 				i.kill()
+				Global.gold += 1
 		elif fedora:
 			var objects = hitbox.get_overlapping_bodies()
 			for i in objects:
@@ -98,9 +106,7 @@ func _physics_process(delta):
 		else:
 			kill()
 	
-	if platformer.lives <= 0:
-		queue_free()
-		platformer.get_tree().change_scene_to_file("res://dead.tscn")
+	
 	
 	if dragon and Input.is_action_just_pressed("Attack"):
 		var fireball = load("res://fireball.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b1svnaw4xvmjg"]
+[gd_scene load_steps=32 format=3 uid="uid://b1svnaw4xvmjg"]
 
 [ext_resource type="Script" path="res://platformer.gd" id="1_d5fqa"]
 [ext_resource type="Texture2D" uid="uid://jo3qeo2ppymd" path="res://background.png" id="1_fnl6r"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://v50ml53ty1bd" path="res://spawner.tscn" id="15_k6n0v"]
 [ext_resource type="PackedScene" uid="uid://cad4kuge7xuuy" path="res://hidden_coin.tscn" id="16_l3cw8"]
 [ext_resource type="PackedScene" uid="uid://di25m5lvqqi06" path="res://hidden_shield.tscn" id="17_pfl1a"]
+[ext_resource type="Script" path="res://finish.gd" id="19_0j3w4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxbdh"]
 size = Vector2(2604.67, 129)
@@ -79,6 +80,9 @@ size = Vector2(35, 604)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ui15"]
 size = Vector2(107.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_duagy"]
+size = Vector2(41, 455)
 
 [node name="platformer" type="Node2D"]
 script = ExtResource("1_d5fqa")
@@ -177,6 +181,14 @@ shape = SubResource("RectangleShape2D_aeu8k")
 
 [node name="Camera2D" type="Camera2D" parent="view"]
 
+[node name="Area2D" type="Area2D" parent="view"]
+collision_layer = 16
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="view/Area2D"]
+position = Vector2(621, -43.375)
+shape = SubResource("RectangleShape2D_dvnk3")
+
 [node name="points" type="Label" parent="view"]
 offset_left = -524.0
 offset_top = -316.0
@@ -196,14 +208,6 @@ texture = ExtResource("12_f3bff")
 [node name="Heart" type="Sprite2D" parent="view"]
 position = Vector2(-535, -295)
 texture = ExtResource("13_lnpxw")
-
-[node name="Area2D" type="Area2D" parent="view"]
-collision_layer = 16
-collision_mask = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="view/Area2D"]
-position = Vector2(621, -43.375)
-shape = SubResource("RectangleShape2D_dvnk3")
 
 [node name="stopper" type="StaticBody2D" parent="."]
 position = Vector2(6854, 380)
@@ -308,3 +312,25 @@ collision_mask = 36
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stopper5"]
 shape = SubResource("RectangleShape2D_5ui15")
+
+[node name="finish" type="Area2D" parent="."]
+position = Vector2(6000, 383)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("19_0j3w4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
+shape = SubResource("RectangleShape2D_duagy")
+
+[node name="label" type="Label" parent="finish"]
+offset_left = -5.885
+offset_right = 7.115
+offset_bottom = 153.0
+text = "F
+I
+N
+I
+S
+H"
+horizontal_alignment = 1
+vertical_alignment = 1

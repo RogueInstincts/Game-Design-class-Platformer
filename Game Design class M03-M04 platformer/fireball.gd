@@ -33,6 +33,7 @@ func _physics_process(delta):
 	var objects = hitbox.get_overlapping_bodies()
 	for i in objects:
 		i.kill()
+		Global.gold += 1
 		queue_free()
 	
 	move_and_slide()

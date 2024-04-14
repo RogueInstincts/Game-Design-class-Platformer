@@ -34,7 +34,7 @@ func _physics_process(delta):
 		sprite.flip_h = true
 	
 	if hitbox.has_overlapping_bodies():
-		platformer.gold += 1
+		Global.gold += 1
 		queue_free()
 	
 	move_and_slide()
