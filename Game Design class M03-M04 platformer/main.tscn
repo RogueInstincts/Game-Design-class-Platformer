@@ -23,8 +23,16 @@ offset_bottom = 648.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 500.0
+offset_left = 201.0
+offset_top = 100.0
+offset_right = 951.0
+offset_bottom = 279.0
+text = "It's time for little Billy to head home from the park
+
+The bullies stole your lunch money, try to get it back!
+
+In the world of Billy's imagination, grab a trench coat, stand tall on your brother's shoulders, and use your pet dragon (which totally isn't just your dog) and scare the bullies into giving your lunch money back!"
+autowrap_mode = 3
 
 [node name="start_button" type="Button" parent="Panel"]
 layout_mode = 0
@@ -34,3 +42,16 @@ offset_right = 651.0
 offset_bottom = 600.0
 toggle_mode = true
 text = "Start Game"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 500.0
+offset_right = 1127.0
+offset_bottom = 601.0
+text = "Controls:
+A/D or LEFT/RIGHT arrow keys to move
+W, UP arrow, or SPACEBAR to jump
+SHIFT, S, or DOWN arrow  to attack (when holding dragon)
+"
+horizontal_alignment = 1
